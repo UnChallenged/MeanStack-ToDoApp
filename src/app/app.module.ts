@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './components/post-create/post-create.component';
@@ -13,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { MainComponent } from './components/main/main.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -32,10 +36,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   imports: [
     BrowserModule,
     FullCalendarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent},
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
