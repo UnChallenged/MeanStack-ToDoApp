@@ -11,6 +11,7 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -23,7 +24,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PostCreateComponent,
     PostEditComponent,
     PostListComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopNavbarComponent
   ],
   imports: [
     BrowserModule,
