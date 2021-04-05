@@ -12,6 +12,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
+import { MainComponent } from './components/main/main.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -25,13 +26,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PostEditComponent,
     PostListComponent,
     DashboardComponent,
-    TopNavbarComponent
+    TopNavbarComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     FullCalendarModule,
     RouterModule.forRoot([
-      { path: '', component: AppComponent, pathMatch: 'full' },
+      { path: '', component: MainComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent},
     ])
   ],
