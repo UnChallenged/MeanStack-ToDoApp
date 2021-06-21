@@ -25,18 +25,7 @@ export class SidenavbarComponent implements OnInit {
     {name: 'Starred', link:'some-link', icon: 'star'},
     {name: 'Send email', link:'some-link', icon: 'send'},
   ]
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    //dateClick: this.handleDateClick.bind(this),// bind is important!
-    selectable: true,
-    height: 550,
-    select(info:any) {
-    {
-      alert('selected ' + info.startStr + ' to ' + info.endStr);
-    }
-    }
-    
-  };
+
   constructor(private _sidenavService: SidenavService) {
     this._sidenavService.sideNavState$.subscribe( res => {
       console.log(res)

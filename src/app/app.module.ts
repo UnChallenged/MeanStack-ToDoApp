@@ -46,8 +46,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatSidenavModule,
     MatListModule,
     RouterModule.forRoot([
-      { path: '', component: MainComponent, pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent},
+      { path: '', component: MainComponent},
+        { path: 'dashboard', component: DashboardComponent}
+      //]}
     ]),
     BrowserAnimationsModule
   ],
