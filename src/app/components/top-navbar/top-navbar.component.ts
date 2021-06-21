@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-top-navbar',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-navbar.component.scss']
 })
 export class TopNavbarComponent implements OnInit {
+  @Input() sidenav!: MatSidenav
 
-  constructor() { }
+  constructor() {
+   
+   }
 
   ngOnInit(): void {
   }

@@ -1,0 +1,16 @@
+.sidenav_container {
+    min-width: 60px; 
+    height: calc(100vh - 200px);
+  }
+  
+  .jim {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .main_content {
+    width:100%; 
+    height: calc(100vh - 100px); 
+    background: #efefef;
+  }

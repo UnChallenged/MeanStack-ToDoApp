@@ -7,6 +7,8 @@ import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './components/post-create/post-create.component';
@@ -17,6 +19,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { MainComponent } from './components/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -31,7 +34,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PostListComponent,
     DashboardComponent,
     TopNavbarComponent,
-    MainComponent
+    MainComponent,
+    SidenavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent, pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent},

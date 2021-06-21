@@ -8,18 +8,7 @@ import { CalendarOptions } from '@fullcalendar/angular'; // useful for typecheck
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    //dateClick: this.handleDateClick.bind(this),// bind is important!
-    selectable: true,
-    height: 550,
-    select(info:any) {
-    {
-      alert('selected ' + info.startStr + ' to ' + info.endStr);
-    }
-    }
-    
-  };
+  
   constructor() { }
   
   ngOnInit(): void {
