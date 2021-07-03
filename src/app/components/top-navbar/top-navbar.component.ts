@@ -7,7 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./top-navbar.component.scss']
 })
 export class TopNavbarComponent implements OnInit {
-  @Input() sidenav!: MatSidenav
+  @Input() sidenav!: MatSidenav;
 
   constructor() {
    
