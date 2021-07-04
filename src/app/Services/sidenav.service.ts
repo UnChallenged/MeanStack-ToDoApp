@@ -6,5 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class SidenavService {
   public sideNavState$: Subject<boolean> = new Subject();
-  constructor() { }
+  constructor() {
+    console.log(this.sideNavState$)
+   }
 }

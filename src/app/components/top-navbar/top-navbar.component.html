@@ -1,6 +1,6 @@
 <div>
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #leftSidenav mode="side" opened="false">
+    <mat-sidenav #leftSidenav mode="side">
       <div class="sidenav_container"  [@onSideNavChange]="sideNavState ? 'open' : 'close'">
           <div fxLayout="column" fxLayoutGap="10px" style="height: 100%;">
             <div class="user_menu">
@@ -36,7 +36,7 @@
       <div class="main_content">
           <!-- <app-top-navbar [sidenav]="leftSidenav"></app-top-navbar> -->
           <mat-toolbar >
-            <button (click)="sidenav.toggle();" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <button (click)="leftSidenav.toggle();" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
               <mat-icon>menu</mat-icon>
             </button>
             <span>My App</span>

@@ -21,6 +21,7 @@ import { TopNavbarComponent } from './components/top-navbar/top-navbar.component
 import { MainComponent } from './components/main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -52,7 +53,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
         { path: 'dashboard', component: DashboardComponent}
       //]}
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
