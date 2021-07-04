@@ -33,7 +33,7 @@
         </div>
     </mat-sidenav>
     <!-- [@onMainContentChange]="onSideNavChange ? 'open': 'close'" -->
-    <mat-sidenav-content> 
+    <mat-sidenav-content [@onMainContentChange]="onSideNavChange ? 'open': 'close'"> 
       <div class="main_content">
           <!-- <app-top-navbar [sidenav]="leftSidenav"></app-top-navbar> -->
           <mat-toolbar >

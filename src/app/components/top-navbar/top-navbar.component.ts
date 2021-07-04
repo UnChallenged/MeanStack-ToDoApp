@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidenavService } from 'src/app/Services/sidenav.service';
-import { animateText, onMainContentChange, onSideNavChange } from 'src/app/components/sidenavbar/animation';
+import { animateText, onMainContentChange, onSideNavChange } from 'src/app/components/top-navbar/animation';
 interface Page {
   link: string;
   name: string;
