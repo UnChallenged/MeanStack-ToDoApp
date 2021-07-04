@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidenavService } from 'src/app/Services/sidenav.service';
 import { animateText, onMainContentChange, onSideNavChange } from 'src/app/components/top-navbar/animation';
@@ -14,23 +14,33 @@ interface Page {
   animations: [onSideNavChange, animateText,onMainContentChange]
 })
 export class TopNavbarComponent implements OnInit {
-   @Input() sidenav!: MatSidenav;
+  //  @Input() sidenav!: MatSidenav;
+   @ViewChild(MatSidenav)
+ sidenav!: MatSidenav;
   public sideNavState: boolean = false;
   public linkText: boolean = false;
   public onSideNavChange: boolean=false;
-  
+  public hidesidebar:string='none';
+
   public pages: Page[] = [
     {name: 'Inbox', link:'some-link', icon: 'inbox'},
     {name: 'Starred', link:'some-link', icon: 'star'},
     {name: 'Send email', link:'some-link', icon: 'send'},
   ]
   constructor(private _sidenavService: SidenavService) {
-      
     this._sidenavService.sideNavState$.subscribe( res => {
-      console.log(this.onSideNavChange)
-      this.onSideNavChange = res;
+      console.log(res)
+      // this.onSideNavChange = res;
+      if(res)
+      {
+        this.hidesidebar='open'
+      }
+      else
+      {
+        this.hidesidebar='close'
+      }
     })
-
+    
    }
 
   ngOnInit(): void {
@@ -38,7 +48,6 @@ export class TopNavbarComponent implements OnInit {
 
   onSinenavToggle() {
     this.sideNavState = !this.sideNavState
-    console.log(this.sideNavState)
     setTimeout(() => {
       this.linkText = this.sideNavState;
     }, 200)

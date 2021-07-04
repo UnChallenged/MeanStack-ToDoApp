@@ -28,6 +28,11 @@ export const onMainContentChange = trigger('onMainContentChange', [
       'margin-left': '200px'
     })
   ),
+  state('none',
+    style({
+      'margin-left': '0px'
+    })
+  ),
   transition('close => open', animate('250ms ease-in')),
   transition('open => close', animate('250ms ease-in')),
 ]);
