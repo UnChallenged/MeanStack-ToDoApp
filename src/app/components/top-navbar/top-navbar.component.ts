@@ -23,7 +23,7 @@ export class TopNavbarComponent implements OnInit {
   public hidesidebar:string='none';
 
   public pages: Page[] = [
-    {name: 'Inbox', link:'some-link', icon: 'inbox'},
+    {name: 'Dashboard', link:'dashboard', icon: 'inbox'},
     {name: 'Starred', link:'some-link', icon: 'star'},
     {name: 'Send email', link:'some-link', icon: 'send'},
   ]
