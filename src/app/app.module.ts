@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
-import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,13 +16,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { MainComponent } from './components/main/main.component';
+import{CalendarHeaderComponent} from './components/dashboard/calendar-header.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
-
-FullCalendarModule.registerPlugins([ // register FullCalendar plugins
-  dayGridPlugin,
-  interactionPlugin
-]);
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [
@@ -35,11 +30,11 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     PostListComponent,
     DashboardComponent,
     TopNavbarComponent,
-    MainComponent
+    MainComponent,
+    CalendarHeaderComponent
   ],
   imports: [
     BrowserModule,
-    FullCalendarModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -52,7 +47,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
       //]}
     ]),
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [{provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]

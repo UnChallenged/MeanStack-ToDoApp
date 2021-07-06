@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CalendarEvent, CalendarView } from 'angular-calendar';
 
 
 @Component({
@@ -8,24 +8,22 @@ import { CalendarOptions } from '@fullcalendar/angular'; // useful for typecheck
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth',
-    //dateClick: this.handleDateClick.bind(this),// bind is important!
-    selectable: true,
-    height: 550,
-    select(info:any) {
-    {
-      alert('selected ' + info.startStr + ' to ' + info.endStr);
-    }
-    }
-    
-  };
+  public selecteddate: any;
+  view: CalendarView = CalendarView.Month;
+
+  viewDate: Date = new Date();
+
+  events: CalendarEvent[] = [];
+
+  clickedDate!: Date;
+
+  clickedColumn!: number;
+
   constructor() { }
   
   ngOnInit(): void {
     
   }
-  // handleDateClick(arg: any) {
-  //   alert('date click! ' + arg.dateStr)
-  // }
+  
 }
+
