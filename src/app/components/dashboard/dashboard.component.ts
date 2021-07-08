@@ -24,6 +24,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  
+  loadeventonclick(event:any){
+  console.log(event);
+  }
 }
 

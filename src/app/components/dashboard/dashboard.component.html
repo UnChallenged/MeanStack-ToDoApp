@@ -17,7 +17,7 @@
     [viewDate]="viewDate"
     [events]="events"
     (columnHeaderClicked)="clickedColumn = $event.isoDayNumber"
-    (dayClicked)="clickedDate = $event.day.date"
+    (dayClicked)="loadeventonclick($event.day.date)"
   >
   </mwl-calendar-month-view>
   <mwl-calendar-week-view
