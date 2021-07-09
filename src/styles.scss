@@ -5,3 +5,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cal-cell-row {
+    height: 100%;
+  }
+
+  .cal-month-view .cal-day-cell {
+     height: 51px;
+     min-height: 0px;
+  }
