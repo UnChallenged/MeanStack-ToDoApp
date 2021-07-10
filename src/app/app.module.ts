@@ -7,6 +7,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './components/post-create/post-create.component';
@@ -41,6 +43,8 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
     MatSidenavModule,
     MatListModule,
     FlexLayoutModule,
+    MatInputModule,
+    MatFormFieldModule,
     RouterModule.forRoot([
       { path: '', component: MainComponent},
         { path: 'dashboard', component: DashboardComponent}
