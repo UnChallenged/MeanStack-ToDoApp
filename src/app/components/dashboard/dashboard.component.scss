@@ -1,6 +1,12 @@
 .notedivstyle{
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid #73AD21;
     width: 33%;
+    height: calc(100vh - 465px);
+    margin-top: 8px;
+}
+.inputtxtadjustment{
+    margin-top: 5px;
+    text-align: center;
 }
