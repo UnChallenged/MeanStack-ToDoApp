@@ -36,18 +36,18 @@ import { CalendarView } from 'angular-calendar';
         </div>
       </div>
       <div class="col-md-4">
-        <h3>{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</h3>
+        <h2>{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</h2>
       </div>
       <div class="col-md-4">
         <div class="btn-group">
-          <div
+          <!-- <div
             class="btn btn-primary"
             (click)="viewChange.emit(CalendarView.Month)"
             [class.active]="view === CalendarView.Month"
           >
             Month
-          </div>
-          <div
+          </div> -->
+          <!-- <div
             class="btn btn-primary"
             (click)="viewChange.emit(CalendarView.Week)"
             [class.active]="view === CalendarView.Week"
@@ -60,7 +60,7 @@ import { CalendarView } from 'angular-calendar';
             [class.active]="view === CalendarView.Day"
           >
             Day
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
